@@ -9,7 +9,7 @@ PORT = 23112;
 
 // object containing pet types and their general requirements
 const petRequirements = {
-	Amphibian_Reptile: {
+	Reptile: {
 		size: "3",
 		space: "2",
 		interaction: "2",
