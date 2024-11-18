@@ -5,7 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-PORT = 8080;
+PORT = 23112;
 
 // object containing pet types and their general requirements
 const petRequirements = {
