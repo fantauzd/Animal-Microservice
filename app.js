@@ -85,6 +85,7 @@ function petTypeRecommenderMultiple(size, space, inter, cost) {
 // using a POST request since GET requests usually don't have a body
 app.post("/pet-type-recommendation", (req, res) => {
 	const { size, space, interaction, cost } = req.body;
+    console.log("request received");
 
 	if (
 		!size ||
@@ -105,7 +106,7 @@ app.post("/pet-type-recommendation", (req, res) => {
 
 	const recommendation = petTypeRecommender(size, space, interaction, cost);
 
-	res.send({ Answer: recommendation });
+	res.json({ answer: recommendation });
 });
 
 app.post("/pet-type-recommendation-multiple", (req, res) => {
@@ -135,7 +136,7 @@ app.post("/pet-type-recommendation-multiple", (req, res) => {
 		cost
 	);
 
-	res.send({
+	res.json({
 		Answer: {
 			Best: recommendation[0][0],
 			Great: recommendation[1][0],
